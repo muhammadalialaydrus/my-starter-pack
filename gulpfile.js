@@ -36,6 +36,11 @@ var paths = {
 		output: 'dist/css',
 		lint: 'src/sass/**/*.s+(a|c)ss'
 	},
+	bootstrap: {
+		popper: 'node_modules/popper.js/dist/umd/popper.min.js',
+		js: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+		output: 'dist/js'
+	},
 	jsVendor: {
 		input: 'src/js/vendor/jquery-3.3.1.min.js',
 		input: 'src/js/vendor/**/*.js',
@@ -49,8 +54,12 @@ var paths = {
 		output: 'dist/js'
 	},
 	img: {
-		input: 'src/img/**/*',
-		output: 'dist/img'
+		input: 'src/assets/img/**/*',
+		output: 'dist/assets/img'
+	},
+	fonts: {
+		input: 'src/assets/fonts/**/*',
+		output: 'dist/assets/fonts'
 	},
 	twig: {
 		src: 'src/templates/*.{twig,html}',
@@ -119,6 +128,23 @@ gulp.task('sass-lint', function () {
 });
 
 /**
+ * JS Bootstrap
+ */
+gulp.task('js:bootstrap', function (done) {
+	return gulp.src([
+		paths.bootstrap.popper,
+		paths.bootstrap.js
+	])
+	.pipe(plumber({ errorHandler: onError }))
+	.pipe(sourcemaps.init())
+	.pipe(concat('bootstrap.js'))
+	.pipe(sourcemaps.write('./', {addComment: false}))
+	.pipe(gulp.dest(paths.bootstrap.output))
+	.pipe(browserSync.reload({stream:true}))
+	done();
+});
+
+/**
  * JS Vendor
  */
 gulp.task('js:vendor', function (done) {
@@ -167,6 +193,19 @@ gulp.task('images', function (done) {
 });
 
 /**
+ * Fonts
+ */
+gulp.task('fonts', function (done) {
+	return gulp.src([
+		paths.fonts.input
+	])
+	.pipe(changed(paths.fonts.output))
+	.pipe(gulp.dest(paths.fonts.output))
+	.pipe(browserSync.reload({stream:true}))
+	done();
+});
+
+/**
  * Twig
  */
 gulp.task('twig', function (done) {
@@ -205,6 +244,9 @@ gulp.task('watch-files', function () {
 	watch(paths.img.input, function () {
 		gulp.start('images');
 	});
+	watch(paths.fonts.input, function () {
+		gulp.start('fonts');
+	});
 	watch(paths.sass.inputAll, function () {
 		gulp.start('css');
 	});
@@ -241,9 +283,11 @@ gulp.task('default', function(done) {
 gulp.task('build', function (done) {
 	runSequence([
 		'css',
+		'js:bootstrap',
 		'js:vendor',
 		'js:main',
 		'images',
+		'fonts',
 		'twig',
 		'copy:misc'
 	], done )

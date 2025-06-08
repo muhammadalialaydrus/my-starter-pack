@@ -3,10 +3,18 @@
  * Author: Muhammad Ali
  */
 
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
 // Vendor
 @import "vendor/bootstrap";
 @import 'vendor/normalize';
 @import 'vendor/aos/aos';
+@import 'vendor/light-gallery/lightgallery';
+@import 'vendor/progressively/progressively';
+@import 'vendor/swiper/swiper';
+@import 'vendor/swiper/swiper-pagination';
+@import 'vendor/swiper/swiper-navigation';
 
 // Fontawesome
 @import 'vendor/font-awesome/fontawesome';
@@ -27,12 +35,13 @@
 // Typography
 @import 'components/typography';
 
+// Components
+@import 'components/**/*.scss';
+
 // Container
 @import 'layout/container';
 @import 'layout/header';
-
-// Components
-@import 'components/**/*.scss';
+@import 'layout/footer';
 
 // Pages
 @import 'pages/index';
