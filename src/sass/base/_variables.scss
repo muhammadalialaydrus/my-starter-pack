@@ -1,0 +1,138 @@
+/**
+ * Variables
+ */
+
+ // FONT FAMILY
+$font_idx: 1;
+$font_default: Helvetica, Arial, sans-serif !default;
+$font-path:	"../fonts" !default;
+
+// Fonts
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-size-base: 14px;
+$line-height-base: 1.5;
+$body-color: #222;
+
+// Transition
+$transition-base: all .3s ease-in-out;
+
+/**
+ * Typography Variables
+ */
+
+// Paragraph
+$paragraph-margin-bottom: 1rem;
+
+// Headings
+$headings-margin-bottom: 0;
+$headings-font-family: $font-family;
+$headings-font-weight: 500;
+$headings-line-height: inherit;
+$headings-color: inherit;
+
+// Headings Font Size
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+// Links
+$link-color: #007bff;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+// Media Query
+$media-query:
+	(imac-retina, (min-width: 2048px)),
+	(imac-large, (min-width: 1920px)),
+	(imac, (min-width: 1700px)),
+	(large-desktop, (min-width: 1500px)),
+	(laptop, (min-width: 1366px)),
+	(wide-laptop, (min-width: 1441px)),
+	(height-laptop, (max-height: 1200px)),
+	(desktop, (min-width: 1200px)),
+	(height-desktop, (min-height: 850px)),
+	(wide, (min-width: 992px)),
+	(width-tablet, (max-width: 992px)),
+	(width-tablet-portrait, (max-width: 768px)),
+	(tablet, (min-width: 768px)),
+	(mobile, (max-width: 767px)),
+	(mobile-iphone, (max-width: 376px)),
+	(small-mobile, (max-width: 360px));
+
+// Default color
+$white: #FFFFFF;
+$black: #000000;
+$primary-bg: #ddd9d9;
+$primary-black: #161515;
+$red: #eb2944;
+$primary-red: #c00;
+$text-brown: #210000;
+$text-black: #41413f;
+$red-orange: #ee3c24;
+$mint: #54929b;
+$highlight-bg: #dacfc2;
+$primary-green: #8DC63F;
+$primary-yellow: #FBB040;
+$primary-orange: #F15A29;
+$primary-red-orange: #EF4136;
+$primary-dark-red: #BE1E2D;
+$primary-brown-red: #4A161B;
+$primary-blue: #6ca7ff;
+$primary-semi-gray: #717171;
+
+$primary-soft-grey: #e6e7e8;
+$primary-navy-blue: #246e78;
+$primary-pink: #cd4c50;
+$tosca: #6ba89a;
+$cream: #efaf9a;
+$pink: #ef829f;
+$block-green: #77b87c;
+$block-cream: #e3967e;
+$block-pink: #ff9e9d;
+$block-yellow: #edd382;
+$text-cream: #fcba92;
+
+$primary: #3aace2;
+$secondary: #1c99d5;
+$text: #959595;
+$text-lighter: #b4b4b4;
+$text-darkgray: #808080;
+$text-darker: #010101;
+$text-purple: #839cb2;
+
+$border-gray: #d7d7d7;
+$border-soft-gray: #c9c6c6;
+$border-footer: #949494;
+
+$bg-default: #f0f6fc;
+$bg-soft-blue: #f0f6fc;
+$bg-dark-gray: #c5c5c5;
+$bg-semi-black: #474747;
+$bg-trans-grey: #E7E8E9;
+$dark-black: #1A1A1A;
+$box-highlight: #5d5d5f;
+
+$navy-blue: #2a4862;
+$green: #2bb673;
+$cyan: #0d92c9;
+$yellow-2: #FDD943;
+$brown: #a62d27;
+$transparent: transparent;
+
+$facebook: #5d82d1;
+$twitter: #40bff5;
+$gplus: #d95946;
+$pinterest: #bd081c;
+$whatsapp: #5CB100;
+
+$bg-semigray: #e7e7e7;
+
+$white-smoke: #f5f5f5;
+$bg-dark: #676769;
+$bg-semi-gray: #ebebeb;
+$light-gray: #f7f7f7;
+$light-black: #4b4b4b;

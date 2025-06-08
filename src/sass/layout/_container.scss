@@ -1,0 +1,14 @@
+html {
+	font-family: $font_default;
+	font-size: $font-size-base;
+	color: $body-color;
+	line-height: $line-height-base;
+}
+
+body {
+	padding: 56px 0 0;
+	
+	@include breakpoint(tablet) {
+		padding: 64px 0 0;
+	}
+}

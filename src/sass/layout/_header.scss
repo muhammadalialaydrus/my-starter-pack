@@ -1,0 +1,94 @@
+body {
+	&.on-scroll {
+		.header-fix {
+			background-color: rgba(0, 0, 0, 0.8);
+			box-shadow: 0 1px 3px 0 rgba(27,27,27,0.1), 0 4px 8px 0 rgba(27,27,27,0.1);
+
+			.brand-logo {
+				a {
+					padding: 8px 0;
+					
+					@include breakpoint(tablet) {
+						padding: 10px 0;
+					}
+				}
+
+				.logo {
+					width: 210px;
+					height: 30px;
+					background-image: url('../img/logo-white.png');
+
+					@include breakpoint(tablet) {
+						width: 236px;
+						height: 34px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.header-fix {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: initial;
+	width: 100%;
+	z-index: 3;
+	transition: all 0.3s linear;
+
+	.header-logo {
+		display: block;
+		z-index: 2;
+		position: relative;
+	}
+
+	.brand-logo {
+		display: block;
+		vertical-align: middle;
+		line-height: 100%;
+		
+		@include breakpoint(small-mobile) {
+			font-size: 1.34em;
+		}
+
+		a {
+			display: inline-block;
+			vertical-align: middle;
+			color: $white;
+			padding: 10px 0;
+
+			&:hover {
+				@include breakpoint(tablet) {
+					color: $red;
+				}
+			}
+		}
+
+		.logo {
+			display: block;
+			width: 252px;
+			height: 36px;
+			background-image: url('../img/logo.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			transition: all 0.3s linear;
+
+			@include breakpoint(tablet) {
+				width: 308px;
+				height: 44px;
+			}
+		}
+
+		strong {
+			display: none;
+		}
+	}
+
+	.header-menu {
+		display: table;
+		width: 100%;
+	}
+}
